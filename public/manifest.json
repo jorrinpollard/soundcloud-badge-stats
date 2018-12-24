@@ -1,0 +1,49 @@
+{
+  "description": "Displays followers and tracks below user badges on SoundCloud",
+  "manifest_version": 2,
+  "name": "soundcloud-badge-stats",
+  "version": "1.0.0",
+  "homepage_url": "https://github.com/jorrinpollard/soundcloud-badge-stats",
+  "permissions": [
+    "*://*.sndcdn.com/*",
+    "*://*.soundcloud.com/*",
+    "*://sndcdn.com/*",
+    "*://soundcloud.com/*",
+    "storage",
+    "unlimitedStorage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "soundcloud-badge-stats"
+  },
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "background": {
+    "scripts": ["app/background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@soundcloud-badge-stats",
+      "strict_min_version": "57.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.sndcdn.com/*",
+        "*://*.soundcloud.com/*",
+        "*://sndcdn.com/*",
+        "*://soundcloud.com/*"
+      ],
+      "js": ["app/content.js"],
+      "run_at": "document_start",
+      "css": ["app/style.css"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+}

@@ -1,0 +1,78 @@
+.badgeList__item {
+  padding-bottom: 20px;
+}
+
+.userBadgeListItem__stats {
+  padding-top: 100%;
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  width: 100%;
+  z-index: 4;
+  color: #fff;
+}
+
+.userBadgeListItem {
+  padding-bottom: 140px !important;
+}
+
+.userBadgeListItem__artwork {
+  z-index: 3;
+}
+
+.userBadgeListItem__title {
+  z-index: 2;
+}
+
+.userBadgeListItem__action {
+  z-index: 1;
+}
+
+.userBadgeListItem__stats {
+  z-index: 0;
+}
+
+.userBadgeListItem__stats--hidden {
+  display: none;
+}
+
+.soundcloud-badge-stats__infoStats,
+.soundcloud-badge-stats__table,
+.soundcloud-badge-stats__tbody {
+  width: 100% !important;
+}
+
+.soundcloud-badge-stats__stat {
+  text-align: center !important;
+}
+
+.infoStats {
+  margin-bottom: 30px;
+}
+.infoStats__table {
+  width: 100%;
+  margin: 0 0 14px 0;
+}
+.infoStats__stat {
+  width: 33.33%;
+  text-align: left;
+  text-indent: 10px;
+}
+.infoStats__stat:first-child {
+  text-indent: 0;
+}
+.infoStats__title {
+  line-height: 0.9;
+  padding: 5px 0 3px;
+  font-size: 12px;
+}
+.infoStats__statLink {
+  display: block;
+}
+.infoStats__value {
+  font-size: 20px;
+  line-height: 1.2;
+}
+.infoStats__description {
+  margin-bottom: 20px;
+}

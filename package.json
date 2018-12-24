@@ -1,0 +1,43 @@
+{
+  "name": "soundcloud-badge-stats",
+  "version": "1.0.0",
+  "description": "Displays followers and tracks below user badges on SoundCloud",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "public",
+        "src"
+      ],
+      "extensions": "js,jsx,json,html,ico,css",
+      "quiet": true,
+      "legacyWatch": true,
+      "delay": 2500,
+      "runOnChangeOnly": false
+    }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch": "npm-watch"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "npm-watch": "^0.5.0"
+  }
+}
