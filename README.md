@@ -4,7 +4,7 @@ Displays followers and tracks below user badges on SoundCloud
 
 ## Requirements
 
-- Firefox 57.0
+- Firefox 57.0+
 
 ### Before
 
