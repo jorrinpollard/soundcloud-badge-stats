@@ -1,4 +1,4 @@
-const backgroundDebugging = 1;
+const backgroundDebugging = 0;
 
 // Intercepts calls to SoundCloud's /followings and /followers API endpoint and persists them in browser.storage.local
 backgroundMain = details => {

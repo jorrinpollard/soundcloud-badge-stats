@@ -1,4 +1,5 @@
-const contentDebugging = 1;
+const contentDebugging = 0;
+const contentRunOnce = 0;
 
 // Capitalize a string
 capitalize = string => {
@@ -117,12 +118,20 @@ appendDataToBadge = (data, badge) => {
 parseBadges = () => {
   if (contentDebugging) console.log("parseBadges init");
 
-  const userBadges = document.querySelectorAll(".userBadgeListItem");
-  if (contentDebugging) console.log(userBadges);
+  let userBadges = document.querySelectorAll(".userBadgeListItem");
 
   // Terminate if last badge on page has been parsed
-  const lastBadge = userBadges[userBadges.length - 1];
-  if (lastBadge.getAttribute("data-imported")) return;
+  if (userBadges[userBadges.length - 1].getAttribute("data-imported")) return;
+
+  // Skip left half of userBadges if the middle badge has been parsed
+  const centerBadgeIndex = Math.floor(userBadges.length / 2);
+  const userBadgesArray = Array.prototype.slice.call(userBadges);
+  const leftBadges = userBadgesArray.slice(0, centerBadgeIndex);
+  if (leftBadges[leftBadges.length - 1].getAttribute("data-imported"))
+    userBadges = userBadgesArray.slice(
+      centerBadgeIndex,
+      userBadgesArray.length
+    );
 
   for (let i = 0; i < userBadges.length; i++) {
     const userBadge = userBadges[i];
@@ -194,6 +203,8 @@ contentMain = () => {
 
 // Poll pages after page load
 window.addEventListener("load", function(e) {
+  if (contentRunOnce) return contentMain();
+
   setInterval(() => {
     contentMain();
   }, 500);
