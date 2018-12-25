@@ -1,4 +1,4 @@
-const contentDebugging = 0;
+const contentDebugging = 1;
 
 // Capitalize a string
 capitalize = string => {
@@ -45,14 +45,14 @@ numberWithSuffix = string => {
 appendDataToBadge = (data, badge) => {
   if (contentDebugging) console.log("appendDataToBadge init");
 
-  // create elements
+  // Create elements
   const badgeStats = document.createElement("div");
   const infoStats = document.createElement("article");
   const infoStatsTable = document.createElement("table");
   const tBody = document.createElement("tbody");
   const tRow = document.createElement("tr");
 
-  // set element attributes
+  // Set element attributes
   badgeStats.setAttribute("class", "userBadgeListItem__stats");
   infoStats.setAttribute(
     "class",
@@ -64,7 +64,7 @@ appendDataToBadge = (data, badge) => {
   );
   tBody.setAttribute("class", "soundcloud-badge-stats__tbody infoStats");
 
-  // append elements
+  // Append elements
   badge.appendChild(badgeStats);
   badgeStats.appendChild(infoStats);
   infoStats.appendChild(infoStatsTable);
@@ -78,13 +78,13 @@ appendDataToBadge = (data, badge) => {
   };
 
   for (const k in whitelist) {
-    // create elements
+    // Create elements
     const stat = document.createElement("td");
     const statLink = document.createElement("a");
     const statTitle = document.createElement("h3");
     const statValue = document.createElement("div");
 
-    // set element attributes
+    // Set element attributes
     const contentTitle = capitalize(k);
     const contentValue = numberWithSuffix(data[whitelist[k]]);
     const linkTitle = numberWithCommas(data[whitelist[k]]) + " " + contentTitle;
@@ -102,16 +102,11 @@ appendDataToBadge = (data, badge) => {
     statValue.setAttribute("class", "infoStats__value sc-font-tabular-light");
     statValue.innerText = contentValue;
 
-    // append elements
+    // Append elements
     tRow.appendChild(stat);
     stat.appendChild(statLink);
     statLink.appendChild(statTitle);
     statLink.appendChild(statValue);
-
-    if (contentDebugging) console.log("contentTitle: " + contentTitle);
-    if (contentDebugging) console.log("contentValue: " + contentValue);
-    if (contentDebugging) console.log("linkTitle: " + linkTitle);
-    if (contentDebugging) console.log("statClass: " + statClass);
   }
 
   // Mark badge as imported so parseBadges() skips it
@@ -124,6 +119,10 @@ parseBadges = () => {
 
   const userBadges = document.querySelectorAll(".userBadgeListItem");
   if (contentDebugging) console.log(userBadges);
+
+  // Terminate if last badge on page has been parsed
+  const lastBadge = userBadges[userBadges.length - 1];
+  if (lastBadge.getAttribute("data-imported")) return;
 
   for (let i = 0; i < userBadges.length; i++) {
     const userBadge = userBadges[i];
