@@ -1,6 +1,6 @@
 {
   "name": "soundcloud-badge-stats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Displays followers and tracks below user badges on SoundCloud",
   "dependencies": {
     "bootstrap": "^4.2.1",

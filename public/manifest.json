@@ -2,7 +2,7 @@
   "description": "Displays followers and tracks below user badges on SoundCloud",
   "manifest_version": 2,
   "name": "soundcloud-badge-stats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage_url": "https://github.com/jorrinpollard/soundcloud-badge-stats",
   "permissions": [
     "*://*.sndcdn.com/*",
