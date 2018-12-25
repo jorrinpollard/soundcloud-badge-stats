@@ -1,4 +1,6 @@
 /fixtures
+/scripts
+/releases
 
 # dependencies
 /node_modules
