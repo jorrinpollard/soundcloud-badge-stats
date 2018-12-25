@@ -207,5 +207,5 @@ window.addEventListener("load", function(e) {
 
   setInterval(() => {
     contentMain();
-  }, 500);
+  }, 300);
 });
