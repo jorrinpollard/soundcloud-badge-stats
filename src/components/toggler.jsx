@@ -3,7 +3,10 @@ import React, { Component } from "react";
 class Toggler extends Component {
   render() {
     return (
-      <div className="btn-group btn-group-toggle my-3" data-toggle="buttons">
+      <div
+        className="btn-group btn-group-toggle mb-3 mt-1"
+        data-toggle="buttons"
+      >
         <button
           className={this.getButtonClasses()}
           onClick={() => this.props.onToggle(this.props.status)}
